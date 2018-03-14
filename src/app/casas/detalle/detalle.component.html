@@ -1,0 +1,29 @@
+<span *ngIf="casa.alquiler" class="label label-primary">Alquiler</span>
+<span *ngIf="!casa.alquiler" class="label label-primary">Venta</span>
+
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+    <a href="#" class="thumbnail">
+      <img src="{{casa.foto}}" alt="{{casa.nombre}}">
+    </a>
+  </div>
+</div>
+
+<hr>
+
+
+<span><span class="glyphicon glyphicon-home" aria-hidden="true"></span><b> Nombre:</b> {{casa.nombre}}</span>
+<span class="precio"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span><b>Precio:</b> {{casa.precio}}</span> 
+
+<p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><b> Direccion:</b> {{casa.direccion}}</p> 
+
+<p><span class="glyphicon glyphicon-bed" aria-hidden="true"></span><b> Habitaciones:</b> {{casa.habitaciones}}</p> 
+
+<div class="servicios">
+  <h3>Servicios:</h3>
+  <ul>
+    <li *ngFor="let servicio of casa.servicios">
+      <input type="checkbox" [checked]="servicio.disponible"> {{servicio.nombre}}
+    </li>
+  </ul>
+</div>

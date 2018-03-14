@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-xs-4 listado">
+    <div class="input-group">
+      <input [(ngModel)]="searchText" class="form-control" placeholder="busca por nombre o dirección" aria-describedby="basic-addon2">
+      <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon2"></span>
+    </div>
+    <br>
+
+    <label for="alquilerFilter">Alquiler</label>
+    <input type="checkbox" [(ngModel)]="alquilerFilter" name="alquilerFilter">
+
+
+    <label for="ventaFilter">Venta</label>
+    <input type="checkbox" [(ngModel)]="ventaFilter" name="ventaFilter">
+    <br>
+    <label for="precioMin">precio minimo</label>
+    <input [(ngModel)]="precioMin" class="form-inline" placeholder="Precio minimo" aria-describedby="basic-addon2">
+    <label for="precioMax">precio maximo</label>
+    <input [(ngModel)]="precioMax" class="form-inline" placeholder="Precio máximo" aria-describedby="basic-addon2">
+
+    <br>
+    <br>
+
+
+    <ul>
+      <li *ngFor="let casa of casas | filterCasa : searchText : alquilerFilter : ventaFilter : precioMin : precioMax" (click)="seleccionarCasa(casa)">
+        <div class="col-sm-6">
+          <div class="thumbnail">
+            <img src="{{casa.foto}}" alt="{{casa.nombre}}">
+            <div class="caption">
+              <span>
+                <b>{{casa.nombre}}</b>
+              </span>
+              <span class="precio">{{casa.precio}}€</span>
+
+            </div>
+          </div>
+        </div>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="col-xs-8 detalle">
+
+    <!--
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"> {{casaSelec.nombre}}</h3>
+            </div>
+            <div class="panel-body">
+              <app-detalle  [receta]="casaSelec"></app-detalle>
+            </div>
+          </div>
+-->
+
+    <app-detalle [casa]="casaSelec"></app-detalle>
+  </div>
+
+
+
+</div>
+<!-- div row-->
