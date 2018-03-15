@@ -13,12 +13,12 @@ export class CasasComponent implements OnInit {
   casaSelec : Casa;
   alquilerFilter : boolean;
   ventaFilter : boolean;
+  precioMin:number;
+  precioMax:number;
 
   constructor(public casaService: CasaService) {
     console.log('CasasComponent constructor');
     this.casas = [];
-
-
   }
 
   ngOnInit() {
@@ -27,6 +27,9 @@ export class CasasComponent implements OnInit {
     this.casaSelec = this.casas[0] || new Casa();
     this.alquilerFilter=true;
     this.ventaFilter=true;
+
+
+    
   }
 
   seleccionarCasa( casa : Casa ){

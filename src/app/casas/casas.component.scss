@@ -16,3 +16,16 @@ ul,li{
 .precio{
     float:right;
 }
+
+.thumbnail{
+    width:110%;
+    img{
+        width:150px;
+        height: 110px;
+    }  
+}
+
+.col-sm-6{
+padding-left: 0;
+margin-left:0;
+}

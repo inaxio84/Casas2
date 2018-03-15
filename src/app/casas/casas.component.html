@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-4 listado">
+  <div class="col-md-4 listado">
     <div class="input-group">
       <input [(ngModel)]="searchText" class="form-control" placeholder="busca por nombre o dirección" aria-describedby="basic-addon2">
       <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon2"></span>
@@ -24,7 +24,7 @@
 
     <ul>
       <li *ngFor="let casa of casas | filterCasa : searchText : alquilerFilter : ventaFilter : precioMin : precioMax" (click)="seleccionarCasa(casa)">
-        <div class="col-sm-6">
+        <div class="col-md-6">
           <div class="thumbnail">
             <img src="{{casa.foto}}" alt="{{casa.nombre}}">
             <div class="caption">
@@ -44,18 +44,7 @@
   </div>
 
 
-  <div class="col-xs-8 detalle">
-
-    <!--
-        <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"> {{casaSelec.nombre}}</h3>
-            </div>
-            <div class="panel-body">
-              <app-detalle  [receta]="casaSelec"></app-detalle>
-            </div>
-          </div>
--->
+  <div class="col-md-8 detalle">
 
     <app-detalle [casa]="casaSelec"></app-detalle>
   </div>

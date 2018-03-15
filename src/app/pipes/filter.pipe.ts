@@ -16,6 +16,8 @@ export class FilterCasa implements PipeTransform {
         //si no hay casas retornar vacío
         if (!casas) { return []; }
 
+        console.log('precio %s %s',precioMax,precioMin)
+
         let casasFilterArray: Casa[] = [];
 
         //Filtramos si es alquiler o no
@@ -39,15 +41,16 @@ export class FilterCasa implements PipeTransform {
         }
 
         //filtramos por precio minimo
-        if (precioMin != undefined) {
+        if (precioMin != null&&precioMin != 0) {
             casasFilterArray=casasFilterArray.filter(it => {
-                return it.precio>precioMin;
+                return it.precio>=precioMin;
             });
         }
+
         //filtramos por precio maximo
-        if (precioMax != undefined) {
+        if (precioMax != null&&precioMax != 0) {
             casasFilterArray=casasFilterArray.filter(it => {
-                return it.precio<precioMax;
+                return it.precio<=precioMax;
             });
         }
 

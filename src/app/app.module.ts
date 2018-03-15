@@ -11,6 +11,7 @@ import { CasasComponent } from './casas/casas.component';
 //Services
 import { CasaService } from './providers/casa.service';
 import { FilterCasa } from './pipes/filter.pipe';
+import { FormularioComponent } from './formulario/formulario.component';
 
 //pipes
 
@@ -21,7 +22,8 @@ import { FilterCasa } from './pipes/filter.pipe';
     AppComponent,
     DetalleComponent,
     CasasComponent,
-    FilterCasa
+    FilterCasa,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
